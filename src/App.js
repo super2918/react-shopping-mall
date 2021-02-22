@@ -17,8 +17,12 @@ function App() {
           <Button variant="outline-info">Search</Button>
         </Form>
       </Navbar>
+
+      
+      
     </div>
   );
 }
+
 
 export default App;
