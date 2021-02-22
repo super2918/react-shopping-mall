@@ -2,10 +2,18 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.bg-main {
+  background: url(./images/main_bg.jpg) no-repeat center;
+  background-size: cover;
+  color: white;
 }
+
+.ly-footer {
+  background: #eee;
+  padding: 2rem 0;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
