@@ -22,7 +22,7 @@ function Cart(props) {
                 <th></th>
                 <th>상품정보</th>
                 <th>수량</th>
-                <th>상품비</th>
+                <th>가격</th>
               </tr>
             </thead>
             <tbody>
@@ -32,7 +32,13 @@ function Cart(props) {
                     <tr key={i}>
                       <td>{ n.id++ }</td>
                       <td>{ n.name }</td>
-                      <td>{ n.quan }</td>
+                      <td>
+                        <div className="number_controller">
+                          <button type="button" className="number_controller--plus" onClick={() => {}}><span className="blind">수량증가</span></button>
+                          <span className="number_controller--quan">{ n.quan }</span>
+                          <button type="button" className="number_controller--minus" onClick={() => {}}><span className="blind">수량감소</span></button>
+                        </div>
+                      </td>
                       <td>{ n.price }</td>
                     </tr>
                   )

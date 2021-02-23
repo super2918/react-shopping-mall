@@ -46,8 +46,8 @@ function Detail(props) {
           <h4 className="pt-5">{props.product[id].title}</h4>
           <p>{props.product[id].content}</p>
           <p>{props.product[id].price}원</p>
-          <button className="btn btn-danger" onClick={() => { console.log('order')}}>주문하기</button>
-          <button className="btn btn-primary ml-2" onClick={() => { history.push('/')}}>뒤돌아가기</button>
+          <button className="btn btn-danger" onClick={() => { history.push('/cart')}}>장바구니</button>
+          <button className="btn btn-primary ml-2" onClick={() => { history.push('/')}}>주문하기</button>
         </div>
       </div>
 
