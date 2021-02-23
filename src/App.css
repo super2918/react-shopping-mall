@@ -3,8 +3,13 @@
 }
 
 
-.bg-main {
-  background: url(./images/main_bg.jpg) no-repeat center;
+.main-visual {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  background:url(./images/main_visual.jpg) no-repeat center;
   background-size: cover;
   color: white;
 }
