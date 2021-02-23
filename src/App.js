@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Form, Navbar, Nav, Button, FormControl, Jumbotron } from 'react-bootstrap';
+import { Navbar, Nav, Button,Jumbotron } from 'react-bootstrap';
 import { Switch, Link, Route, useHistory } from 'react-router-dom';
 import Footer from './components/Footer';
 import Detail from './components/Detail';
@@ -15,18 +15,14 @@ function App() {
   return (
     <div className="App">
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">LOGO</Navbar.Brand>
+        <Navbar.Brand><Nav.Link as={Link} to='/'>LOGO</Nav.Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/detail">Detail</Nav.Link>
-            <Nav.Link as={Link} to="/detail2">Detail2</Nav.Link>
+            <Nav.Link as={Link} to="/detail/1">Detail</Nav.Link>
+            <Nav.Link as={Link} to="/detail/2">Detail2</Nav.Link>
           </Nav>
-          <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-success">검색</Button>
-          </Form>
         </Navbar.Collapse>
       </Navbar>
       
@@ -56,7 +52,7 @@ function App() {
               <button type="button" className="btn btn-primary mt-5 mb-5" onClick={() => {
                 axios.get('https://codingapple1.github.io/shop/data2.json')
                 .then((response) => {
-                  setProduct([...product, ...setProduct.data])
+                  setProduct([...product, ...response.data])
                 })
                 .catch((error) => {
                   console.log('실패');
@@ -66,11 +62,11 @@ function App() {
           </main>
         </Route>
 
-        <Route path="/detail/:id">
+        <Route path="/detail/:id/">
           <Detail product={ product } />
         </Route>
-      </Switch>
 
+      </Switch>
       <Footer />
 
     </div>
@@ -83,7 +79,7 @@ function Card(props) {
 
   return (
     <div className="col-md-4" onClick={() => { history.push('/detail/' + props.product.id ) }}>
-      <img src={'https://codingapple1.github.io/shop/shoes'+( props.index + 1) +'.jpg'} alt="" width="100%"/>
+      <img src={'https://codingapple1.github.io/shop/shoes'+( props.index + 1) +'.jpg'} alt="신발 제품 이미지" width="100%"/>
       <h4>{props.product.title}</h4>
       <p>{props.product.content}</p>
       <p>{props.product.price}</p>
