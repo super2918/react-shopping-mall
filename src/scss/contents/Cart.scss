@@ -1,0 +1,95 @@
+.cart {
+
+  &__title {
+    font-weight: bold;
+    padding: 2rem 0;
+  }
+
+  &__notice {
+    list-style: none;
+    text-align: left;
+    background: #eee;
+    padding: 1.5rem;
+    border-radius: .25rem;
+  }
+
+  &__list {
+    margin-top: 2rem;
+  }
+
+  &__table {
+    border-top: 2px solid #888;
+
+    thead tr th {
+      border: none;
+    }
+    
+    tbody tr:last-child td {
+      border-bottom: 1px solid #dee2e6;
+    }
+  }
+}
+
+.number_controller {
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  border: 1px solid #d9dde0;
+  border-radius: 3px;
+  height: 27px;
+  vertical-align: top;
+
+  button {
+    background-color: transparent;
+    border: 0;
+  }
+
+  .blind {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+  } 
+
+  &--quan {
+    display: inline-block;
+    width: 30px;
+    border-left: 1px solid #d9dde0;
+    border-right: 1px solid #d9dde0;
+  }
+
+
+  &--plus,
+  &--minus {
+    display: inline-block;
+    position: relative;
+    width: 29px;
+    height: 100%;
+    background-color: #fff;
+    vertical-align: top;
+
+    &::before {
+      position: absolute;
+      top: 13px;
+      left: 9px;
+      background-color: #a2a9b0;
+      width: 10px;
+      height: 1px;
+      content: '';
+    }
+  } 
+  
+  &--plus {
+    &::after {
+      position: absolute;
+      top: 8px;
+      right: 14px;
+      width: 1px;
+      height: 11px;
+      background: #a2a9b0;
+      content: '';
+    }
+  } 
+}
